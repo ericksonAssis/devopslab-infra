@@ -2,21 +2,16 @@ terraform {
   required_providers {
     google = {
       source = "hashicorp/google"
-      version = "4.14.0"
+      version = "4.12.0"
     }
   }
 }
 
 # Configura o Provider Google Cloud com o Projeto
-
 provider "google" {
 
-  project = "lab-devops-cloud-6aso"
-  region  = "us-west1"
-  zone    = "us-west1-b"
-}
+  credentials = file("/home/vagrant/gcpkey.json")
 
-provider "google-beta" {
   project = "lab-devops-cloud-6aso"
   region  = "us-west1"
   zone    = "us-west1-b"
